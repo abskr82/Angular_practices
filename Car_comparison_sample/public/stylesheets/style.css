@@ -1,0 +1,24 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.box1 {
+	margin-left: 5px;
+    border: thin solid black
+}
+
+.checkbox {
+    float:right;
+    margin: 5px 0px;
+    width: 200px;
+   
+}
+.centered-text {
+    text-align:center
+}    

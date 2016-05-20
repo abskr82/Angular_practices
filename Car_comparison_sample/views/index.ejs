@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		<%= title%>
+	</title>
+	<link rel="stylesheet" href="stylesheets/lib/bootstrap.min.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<div class="container">
+		<h2>Product list View</h2>
+		<div  ng-repeat="car in cars">
+			<div class='box1'>
+				<h4><b><a href="#">{{car.name}}</a></b></h4>
+				{{car["Fuel Type"]}}, {{car["Transmission Type"]}}, {{car["Mileage (ARAI)(kmpl)"]}} kmpl<br/>
+				 <b>{{car.price}}</b>{{car.priceLoc}}<br/>
+				 <a href="#">Check On Road price</a>
+				<input type="checkbox" class="checkbox"  name="car.name" ng-model ="selVals[car.name]" ng-click="selCheck(car.name);">
+			</div>
+		</div>
+		<button type="button" class="btn btn-primary" ng-click="compareSelected(selVals,'All');">Compare</button>
+
+		<div class="compareCar" ng-if="1" >
+			<div class="text-center" >
+				<div class="btn-group">
+					<button type="button" class="btn btn-default " ng-click="compareSelected(selVals,'all');">All</button>
+					<button type="button" class="btn btn-default" ng-click="compareSelected(selVals,'similar');">Similar</button>
+					<button type="button" class="btn btn-default" ng-click="compareSelected(selVals,'diff');">Different</button>
+				</div>
+			</div>
+
+			  <table class="table table-striped">
+			    <tbody ng-if="dta">
+			      <tr ng-repeat="obj in dta">
+			        <td ng-repeat="(key, value) in obj">{{value}}</td>
+			      </tr>
+			    </tbody>
+			  </table>
+		</div>
+	</div>
+
+</body>
+
+<script src="javascripts/lib/jquery.min.js"></script>
+<script src="javascripts/lib/bootstrap.min.js"></script>
+<script src="javascripts/lib/angular.js"></script>
+
+<script src="javascripts/script.js"></script>
+</html>
