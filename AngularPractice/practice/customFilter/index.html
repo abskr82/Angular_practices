@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+    <head>
+        <meta charset="utf-8">
+        <title>angular</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js">
+            </script>
+            <script src="script.js"></script>
+            <script src="filters.js"></script>
+    </head>
+    <body>
+        <div ng-controller="myController">
+            <input type="text" name="name" ng-model="msg">
+            {{msg}}
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th ng-click="sortData('name')">Name</th>
+                        <th ng-click="sortData('age')">Age</th>
+                        <th ng-click="sortData('gender')">Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="d in stData | orderBy:sortCol:reverseSort">
+                        <td>{{d.name}}</td>
+                        <td>{{d.sal}}</td>
+                        <td>{{d.gender | gender}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+</html>

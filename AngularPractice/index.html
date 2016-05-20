@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app1" ng-init="person = {fName: 'Abhi', lName: 'Banas'}; capitals = [{city: 'Ranchi', state: 'Jharkhand'}, {city: 'bangalore', state: 'karnataka'}]"  ng-cloak>
+    <head>
+        <meta charset ="utf-8">
+        <title>Angular</title>
+        <style>
+            [ng\:cloak], [ng-cloak], .ng-cloak{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-controller='ctrl1'>
+            <span>Values:</span>
+            <input type="text" ng-model='first'/>
+            <input type="text" ng-model='second'/>
+            <br>
+            <button ng-click='updateValue()'>Sum</button>
+            <br/><br/>
+
+            {{calculation}}
+
+            <p>
+                10 + 12 = {{10+12}}
+            </p>
+            <p>
+                First value is {{first}}
+            </p>
+            <p>
+                second value is
+                <span data-ng-bind="second"></span>
+            </p>
+
+            <p>
+                {{person.fName + " " + person.lName}}
+            </p>
+            <ul>
+                <li ng-repeat='capital in capitals'>
+                    {{'City: ' + capital.city + ', State: ' + capital.state}}
+                </li>
+
+            </ul>
+        </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="js/script.js">
+
+    </script>
+    </body>
+</html>

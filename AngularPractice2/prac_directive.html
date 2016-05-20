@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Heloo</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+
+        </script>
+    </head>
+    <body>
+        <ab ng-app="myApp"></ab>
+        <script>
+            angular.module('myApp',[])
+                .directive('ab', function(){
+                    return{
+                        restrict : 'E',
+                        template: "I am part of element"
+                    };
+                });
+        </script>
+
+    </body>
+</html>
